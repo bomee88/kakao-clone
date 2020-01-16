@@ -22,25 +22,72 @@
 .chat{
     min-height: 100vh;
 }
-.chat__write{
+@keyframes float{
+    0%{
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.05);
+    }
+    50%{
+        box-shadow: 0px 6px 10px rgba(0,0,0,0.1);
+    }
+    100%{
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.05);
+    }
+}
+.chat__write-container{
     position: fixed;
-    bottom: 50px;
-    width: 90%;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0; 
+}
+.chat__write-input{
+    all: unset;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fcfcfc;
-    padding: 10px 20px;
-    border-radius: 40px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    bottom: 20px;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    padding: 15px 50px;
+    border-top: 1px solid #efefef;
+    font-size: 14px;
+    transition: width 0.5s ease-in-out, border-radius 0.5s ease-in-out, transform 0.5s ease-in-out;
+
 }
 
-.chat__write i{
-    font-size: 22px;
+
+.chat__write-input:focus{
+    outline: none;
+    border-top:0;
+    width: 80%;
+    border-radius: 40px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.05);
+    transform: translateY(-50px);
+    animation: float 1.5s infinite forwards;
+    
+}
+.chat__icons{
+    z-index: 1;
+    top: 15px;
+    transition: opacity 0.2s ease-in-out;
+}
+.chat__write-input:focus ~ .chat__icons{
+    opacity: 0;
+}
+.chat__icon-left{
+    position: absolute;
+    left: 20px;
+    font-size: 20px;
+}
+.chat__icon-right{
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+}
+.chat__icon-right i{
+    margin-left: 5px;
 }
 .chat__write-column:nth-child(2){
     width: 80%;
@@ -69,6 +116,7 @@
     align-items: center;
     padding-top: 30px;
     padding-bottom: 100px;
+    min-height: 800px;
 }
 
 .chat-screen .chat__timestamp{
@@ -112,11 +160,21 @@
     background: linear-gradient(270deg, #bcbed4, #8a8eb1);
     border-radius: 30px 30px 0 30px;
 }
+@keyframes spin{
+    from{
+        transform: none;
+    }
+    to{
+        transform: rotateY(1turn);
+    }
+}
 .incoming-message img{
     width: 30px;
     height: 30px;
     border-radius: 15px;
     margin-right: 10px;
+    animation: spin 1s linear infinite;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
 }
 
 .incoming-message .message__bubble{
@@ -135,5 +193,32 @@
     align-self: flex-end;
     margin: 10px 5px;
     font-size: 12px;
-    opacity: 0.6;;
+    opacity: 0.6;
+}
+
+@keyframes incomingAni{
+    from{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+.incoming-message{
+    animation: incomingAni 0.5s linear forwards;
+}
+@keyframes sentAni{
+    from{
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+.sent-message{
+    animation: sentAni 0.5s linear forwards;
 }
