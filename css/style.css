@@ -16,10 +16,25 @@
 
 body{
     background-color: #fff;
-    padding: 10px 20px 100px;
+    padding: 0;
+    margin: 0 auto;
     color: #020202;
     font-family: "Open Sans", -apple-system, sans-serif;
 }
+
+.status-bar,
+main,
+.header{
+    padding: 0 20px;
+    margin: 10px 0 30px;
+}
+main{
+    padding-top: 30px;
+    background: #fafafa;
+    border-top: 1px solid #efefef;
+    height: 100vh;
+}
+
 
 a{
     color:  inherit;
