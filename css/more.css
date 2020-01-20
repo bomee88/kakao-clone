@@ -24,7 +24,7 @@
 }
 
 .more .more__suggestions{
-    border-top: 1px solid #f7f7f7;
+    border-top: 1px solid #efefef;
     padding-top: 20px;
    
 }
@@ -33,7 +33,7 @@
     font-size: 14px;
     opacity: 0.6;
     margin-bottom: 10px;
-    border-top: 1px solid #f7f7f7;
+    border-top: 1px solid #efefef;
     padding-top: 10px;
 }
 .more .suggestion__title{
