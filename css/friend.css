@@ -9,7 +9,33 @@
     height: 50px;
     border-radius:40%;
 }
+.friend .avatar-group-2{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+.friend .avatar-group-2 .g-avatar{
+    width: 25px;
+    height: 25px;
+    margin-right: 0;
+}
+.friend .avatar-group-2 .g-avatar:nth-child(1){
+    align-self: flex-start;
+    position: relative;
+    top: 3px;
+    left: 3px;
+}
 
+.friend .avatar-group-2 .g-avatar:nth-child(2){
+    align-self: flex-end;
+    position: relative;
+    bottom: 3px;
+    right: 3px;
+}
 .friend--lg .g-avatar{
     width: 70px;
     height: 70px;
@@ -56,7 +82,7 @@
 .friend .friend__now-listening i{
     color: #52e084;
     font-size: 12px;
-    margin-left: 5px;
+    margin-left: 5px; 
 }
 
 .friend__add-btn{
